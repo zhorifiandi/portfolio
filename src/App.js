@@ -4,7 +4,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import PrimaryNavbar from './components/navbar/PrimaryNavbar';
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import Body from './components/body/Body'
 
 
 const theme = createMuiTheme({
@@ -24,8 +24,10 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <PrimaryNavbar />
-        <Container fixed style={{marginTop:"9.5vh"}}>
-          <Box component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
+        <Container maxWidth="100%" style={{background: "#edededed", height:"100vh"}}>
+          <Container maxWidth="md" style={{marginTop:"80px"}}>
+            <Body />
+          </Container>
         </Container>
       </ThemeProvider>
     );
